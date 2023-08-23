@@ -33,7 +33,7 @@ export class LayoutComponent implements OnInit, OnDestroy, OnChanges {
   public showHeader: boolean = false;
   public itemsMenu: IItemsMenu[] = [
     { path: '/', description: 'Início' },
-    { path: '/doctors', description: 'Médicos' },
+    { path: '/doctors', description: 'Dentistas' },
     { path: '/patients', description: 'Pacientes' },
     { path: '/appointments', description: 'Consultas' },
     { path: '/person', description: 'Minha conta' },

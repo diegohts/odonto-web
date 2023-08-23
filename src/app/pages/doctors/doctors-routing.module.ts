@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: DoctorsComponent,
-    title: 'Médicos',
+    title: 'Dentistas',
   },
   {
     path: 'edit/:id',

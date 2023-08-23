@@ -16,7 +16,7 @@ export class HomeComponent {
   public options: IOptions[] = [
     {
       icon: ['fas', 'user-doctor'],
-      description: 'Médicos(as)',
+      description: 'Dentistas',
       path: 'doctors',
     },
     {
