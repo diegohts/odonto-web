@@ -129,6 +129,28 @@
     <div *ngIf="update" class="deactivate-profile-area">
       <h4 (click)="onDeactivateClicked()">Desativar este perfil</h4>
     </div>
+    <fieldset class="input-area" *ngIf="formOptions.type === 'appointment'">
+      <h3>Consulta</h3>
+      <mat-form-field class="input-full pb-3" appearance="outline">
+        <mat-label>ID do Dentista</mat-label>
+        <input matInput type="number" formControlName="idDentista" required />
+      </mat-form-field>
+      <mat-form-field class="input-full pb-3" appearance="outline">
+        <mat-label>ID do Paciente</mat-label>
+        <input matInput type="number" formControlName="idPaciente" required />
+      </mat-form-field>
+      <mat-form-field class="input-full pb-3" appearance="outline">
+        <mat-label>ID do Procedimento</mat-label>
+        <input matInput type="number" formControlName="idProcedimento" required />
+      </mat-form-field>
+      <mat-form-field class="input-full pb-3" appearance="outline">
+        <mat-label>Data da Consulta</mat-label>
+        <input matInput type="text" formControlName="data" required />
+        <mat-error *ngIf="data?.hasError('invalidDateFormat') || data?.hasError('required')">
+          {{ data?.hasError('invalidDateFormat') ? 'Formato de data inválido' : 'Campo obrigatório' }}
+        </mat-error>
+      </mat-form-field>
+    </fieldset>
     <div class="actions-area">
       <button
         mat-flat-button

@@ -27,8 +27,8 @@ export interface INewDoctor {
 }
 
 export enum IEspecialidade {
-  ORTOPEDIA = 'Ortopedia',
-  CARDIOLOGIA = 'Cardiologia',
-  GINECOLOGIA = 'Ginecologia',
-  DERMATOLOGIA = 'Dermatologia',
+  CLINICO_GERAL = 'Clínico geral',
+  IMPLANTODENTISTA = 'Implantodentista',
+  ORTODONTISTA = 'Ortodontista',
+  ODONTOPEDIATRIA = 'Odontopediatria',
 }
