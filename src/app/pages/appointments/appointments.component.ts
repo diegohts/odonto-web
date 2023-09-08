@@ -21,7 +21,7 @@ import { IAppointment } from './model/appointment'; // Importe o modelo de agend
   styleUrls: ['./appointments.component.scss'],
 })
 export class AppointmentsComponent implements OnInit, OnDestroy {
-  private appointments$!: Observable<IAppointment[]>;
+  public appointments$!: Observable<IAppointment[]>;
   private destroySubject$: Subject<boolean> = new Subject<boolean>();
 
   public isLoading!: boolean;
@@ -56,13 +56,12 @@ export class AppointmentsComponent implements OnInit, OnDestroy {
     );
   }
 
-  private mapperToItems(appointments: IAppointment[]): IItem[]{
-    // Mapeie os agendamentos para a estrutura de IItem
+  public mapperToItems(appointments: IAppointment[]): IItem[]{
     const list = appointments.map((item) => ({
       id: item.id,
-      title: item.nomePaciente, // Substitua pelo campo apropriado
-      description: `${item.nomeProcedimento} | ${item.data}`, // Substitua pelos campos apropriados
-      content: [item.nomeDentista, item.nomeProcedimento], // Substitua pelos campos apropriados
+      title: item.nomePaciente, 
+      description: `${item.nomeProcedimento} | ${item.data}`,
+      content: [item.nomeDentista, item.nomeProcedimento], 
     })) as IItem[];
 
     return list;
@@ -72,7 +71,7 @@ export class AppointmentsComponent implements OnInit, OnDestroy {
     this.router.navigate(['/appointments/edit', idAppointment]); // Defina a rota de edição adequada
   }
 
-  public onCancelButtonClicked(idAppointment: number): void {
+  public onDeactivateButtonClicked(idAppointment: number): void {
     // Implemente a lógica para cancelamento de agendamento
     // Similar ao onCancelButtonClicked do DoctorsComponent
   }

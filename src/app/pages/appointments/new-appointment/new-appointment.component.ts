@@ -30,31 +30,45 @@ export class NewAppointmentComponent implements OnInit {
   }
 
   public onSubmit(formValues: IRegistrationFormInputValues) {
-    const newAppointment: INewAppointment = {
-      idDentista: formValues.idDentista,
-      idPaciente: formValues.idPaciente,
-      idProcedimento: formValues.idProcedimento,
-      data: formValues.data,
-      especialidade: formValues.especialidade as IEspecialidade,
-    };
-
+    let newAppointment: INewAppointment | undefined = undefined;
+  
+    if (this.formOptions.type === 'appointment') {
+      if (
+        formValues.idDentista !== undefined &&
+        formValues.idPaciente !== undefined &&
+        formValues.idProcedimento !== undefined &&
+        formValues.data !== undefined
+      ) {
+        newAppointment = {
+          idDentista: formValues.idDentista,
+          idPaciente: formValues.idPaciente,
+          idProcedimento: formValues.idProcedimento,
+          data: formValues.data,
+          especialidade: formValues.especialidade as IEspecialidade,
+        };
+      }
+    }
+  
     console.log('submit ', newAppointment);
-    // salvar os dados
-    this.appointmentsService
-      .newAppointment(newAppointment)
-      .pipe(take(1))
-      .subscribe({
-        next: () => {
-          this.message = 'Dados salvos com sucesso';
-          this.success = true;
-          setTimeout(() => {
-            this.location.back();
-          }, 1000);
-        },
-        error: () => {
-          this.message = 'Erro ao cadastrar os dados';
-          this.success = false;
-        },
-      });
-  }
+  
+    if (newAppointment) {
+      // salvar os dados
+      this.appointmentsService
+        .newAppointment(newAppointment)
+        .pipe(take(1))
+        .subscribe({
+          next: () => {
+            this.message = 'Dados salvos com sucesso';
+            this.success = true;
+            setTimeout(() => {
+              this.location.back();
+            }, 1000);
+          },
+          error: () => {
+            this.message = 'Erro ao cadastrar os dados';
+            this.success = false;
+          },
+        });
+    }
+  }  
 }

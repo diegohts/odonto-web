@@ -1,22 +1,22 @@
 <div class="app-appointments">
   <div class="spinner-area" *ngIf="isLoading">
-    <!-- <mat-spinner diameter="40"></mat-spinner> -->
+    <mat-spinner diameter="40"></mat-spinner>
   </div>
   <span *ngIf="!isLoading">
-    <!-- <div *ngIf="appointments$ | async as appointments"> -->
-      <!-- <div *ngIf="appointments.length > 0; else noAppointments">
+    <div *ngIf="appointments$ | async as appointments">
+      <div *ngIf="appointments.length > 0; else noAppointments">
         <app-list-expansion-panel
-          [items]="appointments"
-          (edit-button-clicked)="onEditButtonClicked($event)"
-          (cancel-button-clicked)="onCancelButtonClicked($event)"
-        ></app-list-expansion-panel>
-      </div> -->
+        [items]="mapperToItems(appointments)"
+        (edit-button-clicked)="onEditButtonClicked($event)"
+        (deactivate-button-clicked)="onDeactivateButtonClicked($event)"
+      ></app-list-expansion-panel>
+      </div>
       <div class="actions-area">
         <button mat-flat-button [routerLink]="['/appointments/new']">
           Cadastrar consulta
         </button>
       </div>
-    <!-- </div> -->
+    </div>
     <ng-template #noAppointments>
       <div class="no-content-area">
         <p>Sem agendamentos cadastrados...</p>

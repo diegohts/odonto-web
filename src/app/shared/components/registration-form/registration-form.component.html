@@ -146,10 +146,10 @@
       <mat-form-field class="input-full pb-3" appearance="outline">
         <mat-label>Data da Consulta</mat-label>
         <input matInput type="text" formControlName="data" required />
-        <mat-error *ngIf="data?.hasError('invalidDateFormat') || data?.hasError('required')">
-          {{ data?.hasError('invalidDateFormat') ? 'Formato de data inválido' : 'Campo obrigatório' }}
+        <mat-error *ngIf="registrationForm.get('data')?.hasError('invalidDateFormat') || registrationForm.get('data')?.hasError('required')">
+          {{ registrationForm.get('data')?.hasError('invalidDateFormat') ? 'Formato de data inválido' : 'Campo obrigatório' }}
         </mat-error>
-      </mat-form-field>
+      </mat-form-field>      
     </fieldset>
     <div class="actions-area">
       <button

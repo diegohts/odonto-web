@@ -12,14 +12,14 @@ export interface IRegistrationFormInputValues {
   cidade: string;
   cep: string;
   bairro: string;
-  idDentista: number;
-  idPaciente: number;
-  idProcedimento: number;
-  data: string;
+  idDentista?: number;
+  idPaciente?: number;
+  idProcedimento?: number;
+  data?: string;
 }
 
 export interface IRegistrationFormOption {
-  type: 'doctor' | 'patient' | 'appointment' ;
+  type: 'doctor' | 'patient' | 'appointment';
   inputValues?: IRegistrationFormInputValues;
 }
 
