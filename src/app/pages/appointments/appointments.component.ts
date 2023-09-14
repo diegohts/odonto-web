@@ -47,6 +47,9 @@ export class AppointmentsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.setItems();
+    this.appointments$.subscribe(appointments => {
+      console.log('Agendamentos recebidos: ', appointments)
+    });
   }
 
   private setItems() {
