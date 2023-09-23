@@ -4,24 +4,24 @@ $primary-color: #0b3b60;
   @apply px-10 flex flex-col justify-around h-full;
 
   .logo-image{
-    width: 158px;
-    height: 58px;
+    width: 215px;
+    height: 73px;
   }
   .logo-area {
     @apply h-1/6 flex flex-col justify-end;
     img {
-      height: 58px;
+      height: 73px;
       display: flex;
-    }
-    h3 {
-      color: $primary-color;
-      @apply text-base font-extrabold;
     }
   }
   .content-area {
     @apply pt-3 pb-6 flex flex-col h-5/6;
     h2 {
-      @apply text-base pb-3;
+      @apply text-base;
+    }
+    h3 {
+      color: $primary-color;
+      @apply text-base font-extrabold;
     }
     .options {
       @apply grid gap-2 grid-cols-1 grid-rows-3 md:mx-auto md:w-3/5 h-5/6;
