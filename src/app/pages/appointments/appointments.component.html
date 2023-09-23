@@ -3,7 +3,7 @@
     <mat-spinner diameter="40"></mat-spinner>
   </div>
   <span *ngIf="!isLoading">
-    <div *ngIf="appointments$ | async as appointments">
+    <!-- <div *ngIf="appointments$ | async as appointments">
       <div *ngIf="appointments.length > 0; else noAppointments">
         <app-list-expansion-panel
         [items]="mapperToItems(appointments)"
@@ -16,11 +16,11 @@
           Cadastrar consulta
         </button>
       </div>
-    </div>
-    <ng-template #noAppointments>
-      <div class="no-content-area">
-        <p>Sem agendamentos cadastrados...</p>
+    </div> -->
+    <!-- <ng-template #noAppointments> -->
+      <div class="no-content-area centered-content">
+        <p>Funcionalidade em preparação!</p>
       </div>
-    </ng-template>
+    <!-- </ng-template> -->
   </span>
 </div>

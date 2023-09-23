@@ -1,0 +1,8 @@
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Certifica-se de que ocupe toda a altura do elemento pai */
+  }
+  

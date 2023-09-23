@@ -1,13 +1,17 @@
 $primary-color: #0b3b60;
 
 .app-home {
-  @apply px-9 flex flex-col justify-around h-full;
+  @apply px-10 flex flex-col justify-around h-full;
 
+  .logo-image{
+    width: 158px;
+    height: 58px;
+  }
   .logo-area {
-    @apply py-2 h-1/6 flex flex-col justify-end;
+    @apply h-1/6 flex flex-col justify-end;
     img {
-      width: 138px;
-      height: 32px;
+      height: 58px;
+      display: flex;
     }
     h3 {
       color: $primary-color;
@@ -15,9 +19,9 @@ $primary-color: #0b3b60;
     }
   }
   .content-area {
-    @apply pt-4 pb-8 flex flex-col h-5/6;
+    @apply pt-3 pb-6 flex flex-col h-5/6;
     h2 {
-      @apply text-base pb-4;
+      @apply text-base pb-3;
     }
     .options {
       @apply grid gap-2 grid-cols-1 grid-rows-3 md:mx-auto md:w-3/5 h-5/6;

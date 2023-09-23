@@ -57,16 +57,20 @@ export class AppointmentsComponent implements OnInit, OnDestroy {
     this.items$ = this.appointments$.pipe(
       map((appointments) => this.mapperToItems(appointments))
     );
+
+    console.log('this.appointments$: ', this.appointments$);
+    console.log('this.items$: ', this.items$);
   }
 
   public mapperToItems(appointments: IAppointment[]): IItem[]{
+    console.log('Mapeando agendamentos: ', appointments);
     const list = appointments.map((item) => ({
       id: item.id,
       title: item.nomePaciente, 
       description: `${item.nomeProcedimento} | ${item.data}`,
       content: [item.nomeDentista, item.nomeProcedimento], 
     })) as IItem[];
-
+    console.log('mapperToItens List: ', list);
     return list;
   }
 
