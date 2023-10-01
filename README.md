@@ -28,12 +28,12 @@ Vale ressaltar que esse projeto frontend ainda está em construção e estamos u
 
 🚧 Em construção
 
-- [x] Agendamento de consultas;
-- [x] Cancelamento de consultas;
-- [x] Lista de consultas;
-- [x] CRUD de convênios;
-- [x] CRUD de procedimentos;
-- [x] Registro de pagamentos.
+- [ ] Agendamento de consultas;
+- [ ] Cancelamento de consultas;
+- [ ] Lista de consultas;
+- [ ] CRUD de convênios;
+- [ ] CRUD de procedimentos;
+- [ ] Registro de pagamentos.
 
 # Anotações
 
