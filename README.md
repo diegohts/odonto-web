@@ -21,13 +21,13 @@ Vale ressaltar que esse projeto frontend ainda está em construção e estamos u
 
 ✔️ Finalizado
 
-- [x] Login, alteração dos dados e signup do sistema;
+- [x] Login, alteração dos dados de usuários do sistema;
 - [x] CRUD de dentistas;
 - [x] CRUD de pacientes;
 - [x] Deploy no Vercel.
 
 🚧 Em construção
-
+- [ ] Signup no sistema;
 - [ ] Agendamento de consultas;
 - [ ] Cancelamento de consultas;
 - [ ] Lista de consultas;
@@ -37,7 +37,7 @@ Vale ressaltar que esse projeto frontend ainda está em construção e estamos u
 
 # Anotações
 
-Apesar de alguns módulos da aplicação, como relatado anteriomente, ainda estarem em construção, o site está disponível e pronto para testes, através do link: https://odonto-web.vercel.app/sign-in
+Apesar de alguns módulos da aplicação, como relatado anteriomente, ainda estarem em construção, o site está disponível e pronto para testes, através do link: https://odonto-web.vercel.app
 
 # Tecnologias
 
