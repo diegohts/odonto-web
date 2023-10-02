@@ -193,10 +193,10 @@ export class RegistrationFormComponent implements OnInit, OnDestroy {
     if (this.formOptions.type === 'doctor') {
       this.registrationForm.get('cpf')?.clearValidators();
       this.registrationForm.get('cpf')?.clearAsyncValidators();
-      this.registrationForm.get('email')?.clearAsyncValidators();
-      this.registrationForm
-        .get('email')
-        ?.setAsyncValidators(EmailValidator.validator(this.doctorsService));
+      // this.registrationForm.get('email')?.clearAsyncValidators();
+      // this.registrationForm
+      //   .get('email')
+      //   ?.setAsyncValidators(EmailValidator.validator(this.doctorsService));
     }
   }
 
