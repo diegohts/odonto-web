@@ -50,20 +50,20 @@ export class LayoutComponent implements OnInit, OnDestroy, OnChanges {
     this.router.events
       .pipe(takeUntil(this.destroySubject$))
       .subscribe((data) => {
-        // console.log({ data });
+        console.log({ data });
         if (data instanceof NavigationEnd) {
           const url = data.urlAfterRedirects.slice(1);
           this.showBackButton = !url.startsWith('home');
         }
         if (data instanceof ActivationStart) {
           const newTitle = data.snapshot.routeConfig?.title;
-          // console.log({ newTitle });
+          console.log({ newTitle });
           // prettier-ignore
           this.title = newTitle ? (newTitle as string) : this.title;
           this.title = this.title !== 'Início' ? this.title : '';
           console.log(this.title);
           this.showHeader = this.title !== 'Cadastrar' && this.title !== 'Entrar';
-          //console.log(this.showHeader);
+          console.log(this.showHeader);
         }
       });
   }

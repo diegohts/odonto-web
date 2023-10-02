@@ -15,6 +15,8 @@ import { take } from 'rxjs';
 })
 export class NewPatientComponent {
   public formOptions!: IRegistrationFormOption;
+  public message: string = '';
+  public success: boolean = false;
 
   constructor(
     private location: Location,
@@ -50,12 +52,16 @@ export class NewPatientComponent {
       .pipe(take(1))
       .subscribe({
         next: () => {
+          this.message = 'Dados salvos com sucesso';
+          this.success = true;
           console.log('Dados salvos com sucesso');
           setTimeout(() => {
             this.location.back();
           }, 1000);
         },
         error: (error) => {
+          this.message = 'Erro ao cadastrar os dados';
+          this.success = false;
           console.log('Erro ao cadastrar os dados ', error);
         },
       });
