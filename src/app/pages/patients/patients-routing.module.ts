@@ -12,14 +12,14 @@ const routes: Routes = [
     title: 'Pacientes',
   },
   {
-    path: 'new',
-    component: NewPatientComponent,
-    title: 'Cadastrar',
-  },
-  {
     path: 'edit/:id',
     component: EditPatientComponent,
     title: 'Editar',
+  },
+  {
+    path: 'new',
+    component: NewPatientComponent,
+    title: 'Novo Perfil',
   },
 ];
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import {
   IRegistrationFormInputValues,
@@ -13,7 +13,7 @@ import { take } from 'rxjs';
   templateUrl: './new-patient.component.html',
   styleUrls: ['./new-patient.component.scss'],
 })
-export class NewPatientComponent {
+export class NewPatientComponent implements OnInit{
   public formOptions!: IRegistrationFormOption;
   public message: string = '';
   public success: boolean = false;
