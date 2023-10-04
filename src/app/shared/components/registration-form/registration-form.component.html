@@ -11,7 +11,7 @@
         <mat-form-field class="input-60 pr-3" appearance="outline">
           <mat-label>Especialidade</mat-label>
           <mat-select [value]="especialidade?.value" formControlName="especialidade" required>
-            <mat-option [value]="item.toUpperCase()" *ngFor="let item of listEspecialidade">{{ item }}</mat-option>
+            <mat-option [value]="normalizeAndRemoveAccents(item)" *ngFor="let item of listEspecialidade">{{ item }}</mat-option>
           </mat-select>
         </mat-form-field>
         <span class="spacer"></span>

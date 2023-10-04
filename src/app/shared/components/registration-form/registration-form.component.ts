@@ -259,6 +259,21 @@ export class RegistrationFormComponent implements OnInit, OnDestroy {
     });
   }
 
+  public normalizeAndRemoveAccents(value: string): string {
+    return value
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/ /g, '_')
+      .replace(/~/g, '')
+      .replace(/ç/g, 'c')
+      .replace(/[ãâáàä]/g, 'a')
+      .replace(/[êéèë]/g, 'e')
+      .replace(/[îíìï]/g, 'i')
+      .replace(/[õôóòö]/g, 'o')
+      .replace(/[ûúùü]/g, 'u')
+      .toUpperCase();
+  }
+
   public get nome() {
     return this.registrationForm.get('nome');
   }
