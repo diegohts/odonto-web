@@ -56,7 +56,6 @@ export class DoctorsComponent implements OnInit, OnDestroy {
     );
   }
 
-  // prettier-ignore
   private mapperToItems(doctors: IDoctor[]): IItem[]{
     const list = doctors.map((item) => ({
       id: item.id,
@@ -65,6 +64,7 @@ export class DoctorsComponent implements OnInit, OnDestroy {
       content: [item.email]
     })) as IItem[];
 
+    console.log('Lista dentistas: ', list);
     return list;
   }
 
